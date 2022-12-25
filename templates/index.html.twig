@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form(form) }}
-    {{ averageTemp }}
+    <div class="container">
+        {% if averageTemp %}
+            <div class="temp-result">
+                {{ averageTemp ? 'Average temperature of the location is: '|trans ~ averageTemp : null }}
+            </div>
+        {% endif %}
+
+        {{ form(form) }}
+    </div>
 {% endblock %}
